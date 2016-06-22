@@ -6,13 +6,15 @@ import {TinyService} from 'tiny';
 import {TinyTools} from 'tiny-tools';
 import {TinyOutput} from 'tiny-output';
 import {TinyInput} from 'tiny-input';
+import {TinyConfig} from 'tiny-config';
 
 // console.log (TinyPicker, TinySource, TinyAsm, TinyTools, TinyOutput);
 
 @Component({
   providers: [TinyService],
   selector: 'tiny-demonstration',
-  directives: [TinyPicker, TinySource, TinyAsm, TinyTools, TinyOutput, TinyInput],
+  directives: [TinyPicker, TinySource, TinyAsm, TinyTools, TinyOutput, TinyInput,
+               TinyConfig],
   templateUrl: 'tiny-demonstration.html'
 })
 

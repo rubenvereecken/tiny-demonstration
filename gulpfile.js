@@ -25,8 +25,20 @@ gulp.task('serve', ['nodemon'], function (cb) {
   // })
 });
 
+gulp.task('serve:dist', ['nodemon:dist'])
+
+gulp.task('nodemon:dist', function() {
+  process.env.PORT = 80
+  process.env.IP = '0.0.0.0'
+  return nodemon({
+    script: 'server',
+    ext: 'js',
+    ignore: [],
+    watch: ['server'],
+  });
+})
+
 gulp.task('nodemon', function() {
-  // return nodemon('-w server server');
   return nodemon({
     script: 'server',
     ext: 'js',

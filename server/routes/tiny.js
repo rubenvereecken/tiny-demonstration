@@ -35,7 +35,8 @@ function getSources(req, res) {
 function compileSource(req, res) {
   if (!req.body.source) return res.status(400).end();
   const source = req.body.source;
-  const result = tiny.process(source);
+  console.log(req.body.config)
+  const result = tiny.process(source, req.body.config);
 
   if (req.body.alsoExecute && result.errors.length === 0) {
     const tmpFile = tmp.fileSync();

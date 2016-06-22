@@ -12,6 +12,10 @@ export class TinyService {
       input: '',
       asm: null,
       result: {},
+      config: {
+        globalLiveness: true,
+        compressConstants: false,
+      },
     };
     this.sources = null;
 
@@ -35,11 +39,10 @@ export class TinyService {
     // console.log(this.current.source)
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({ headers: headers });
-    let config = {};
     let body = {
       source: this.current.source,
       input: this.current.input,
-      config: config,
+      config: this.current.config,
       alsoExecute: alsoExecute,
     }
 

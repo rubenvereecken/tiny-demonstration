@@ -1,0 +1,4 @@
+int tiny() {
+  int a = 2 * 6 + 3;
+  writeln a;
+}
