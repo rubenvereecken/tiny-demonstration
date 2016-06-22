@@ -1,0 +1,16 @@
+int tiny() {
+    int b = 5;
+    int a = 1;
+    while (b > 0) {
+        b = b - 1;
+    }
+    writeln b;
+    while (1) {
+        b = b + 1;
+        if (b > 100) {
+          break;
+        }
+    }
+    writeln b;
+}
+

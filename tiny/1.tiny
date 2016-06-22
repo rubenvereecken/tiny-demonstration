@@ -1,0 +1,8 @@
+char c = 'b';
+
+int tiny() {
+  int a = 1;
+  int c;
+  char blub = 'a';
+}
+

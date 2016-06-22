@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tiny-demonstration</title>
+  </head>
+  <body>
+
+    <main>Loading...</main>
+
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/traceur/bin/traceur-runtime.js"></script>
+    <!-- <script src="node_modules/systemjs/dist/system-csp-production.src.js"></script> -->
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/angular2-polyfill/bundles/angular2-polyfill.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+
+    <script>
+      System.config({
+        defaultJSExtensions: true,
+        packages: {
+          "@angular/common": { main: 'index.js', defaultExtension: 'js' },
+          "@angular/compiler": { main: 'index.js', defaultExtension: 'js' },
+          '@angular/core': { main: 'index.js', defaultExtension: 'js' },
+          '@angular/http': { main: 'index.js', defaultExtension: 'js' },
+          '@angular/platform-browser': { main: 'index.js', defaultExtension: 'js' },
+          '@angular/platform-browser-dynamic': { main: 'index.js', defaultExtension: 'js' },
+          '@angular/router-deprecated': { main: 'index.js', defaultExtension: 'js' },
+          '@angular/testing': { main: 'index.js', defaultExtension: 'js' },
+          '@angular/upgrade': { main: 'index.js', defaultExtension: 'js' },
+        }, 
+        map: {
+          "@angular": "node_modules/@angular",
+          "zone.js": "node_modules/zone.js/dist"
+        }
+      });
+    </script>
+
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+
+    <script>
+      System.import('index').catch(console.log.bind(console));
+      //System.import('lib/http')
+    </script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/github.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="tiny-demonstration.css">
+  </body>
+</html>

@@ -1,0 +1,6 @@
+int tiny() {
+  int[] c = [1, 2, 3];
+  char[] d = ['a', 'b'];
+  writeln c[1];
+  writeln d[1];
+}

@@ -1,0 +1,9 @@
+int tiny() {
+  char[] hello = "Hello World";
+  // Strings are NUL-terminated, C-style
+  char[] hello2 = ['H', 'e', 'l', 'l', 'o', ' ', 'G', 'l', 'o', 'b', 'e', 0];
+  writeln hello;
+  writeln hello2;
+  write "Hello All";
+  write '\n';
+}

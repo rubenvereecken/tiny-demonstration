@@ -1,0 +1,3 @@
+<select id="" class="form-control" [ngModel]="currentFile" (ngModelChange)="updateSource($event)">
+  <option *ngFor="#source of sources" [value]="source.source">{{source.name}}</option>
+</select>

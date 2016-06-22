@@ -1,0 +1,9 @@
+int f(int[1] b) {
+  writeln length(b);
+}
+
+int tiny() {
+  int[5] a;
+  writeln length(a);
+  f(a);
+}

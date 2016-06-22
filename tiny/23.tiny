@@ -1,0 +1,14 @@
+int tiny() {
+  int a = 10;
+  int b = 4;
+  while (a > 0) {
+    writeln b;
+    if (a < 5) {
+      writeln 2;
+    } else {
+      writeln 3;
+    }
+    a -= 1;
+  }
+
+}

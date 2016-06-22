@@ -1,0 +1,6 @@
+int tiny() {
+  int a = 23;
+  writeln a;
+  writeln 43;
+  writeln 'c';
+}

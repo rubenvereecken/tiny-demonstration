@@ -1,0 +1,8 @@
+int tiny() {
+  int a, b, c, d, e, f, g;
+  a = b + c;
+  b = c + d;
+  d = d + e;
+  e = e + f;
+  f = d + g;
+}

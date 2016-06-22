@@ -1,0 +1,8 @@
+int tiny() {
+    int a = 3;
+    if (a < 4 || a > 10) {
+        a = a + 1;
+    } else {
+        int b = 20;
+    }
+}
