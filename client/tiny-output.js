@@ -6,7 +6,9 @@ import {TinyService} from 'tiny';
   selector: 'tiny-output',
   directives: [],
   template: `
-<pre><code>{{current.result.tinyOutput}}</code></pre>
+<label>Program output</label>
+<pre *ngIf="current.result.errors && current.result.errors.length > 0"><div *ngFor="#error of current.result.errors">{{error}}</div></pre>
+<pre>{{current.result.tinyOutput}}</pre>
   `
 })
 

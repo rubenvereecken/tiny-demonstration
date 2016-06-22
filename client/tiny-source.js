@@ -5,7 +5,11 @@ import {TinyService} from 'tiny';
 @Component({
   selector: 'tiny-source',
   directives: [],
-  templateUrl: 'tiny-source.html',
+  template: `
+  <textarea class="form-control" id="" name="" rows="20" [(ngModel)]="current.source">
+  {{current.source}}
+  </textarea>
+  `
 })
 
 export class TinySource {

@@ -37,13 +37,17 @@ function compileSource(req, res) {
   const source = req.body.source;
   const result = tiny.process(source);
 
-  if (req.body.alsoExecute) {
+  if (req.body.alsoExecute && result.errors.length === 0) {
     const tmpFile = tmp.fileSync();
     fs.writeFileSync(tmpFile.name, result.asm);
     let tmpBaseName = path.join(path.dirname(tmpFile.name), path.basename(tmpFile.name, '.tmp'))
     result.asmOutput = child.execSync('nasm -w+all -f elf -g -F stabs ' + tmpFile.name).toString();
     result.gccOutput = child.execSync(`gcc -m32 -Wl,-etiny -nostdlib ${tmpBaseName}.o -o ${tmpBaseName} -lc`).toString();
-    result.tinyOutput = child.execSync(tmpBaseName, req.body.input).toString();
+    try {
+      result.tinyOutput = child.execSync(tmpBaseName, {input:req.body.input}).toString();
+    } catch (e) {
+      result.errors.push(e.message);
+    }
     tmpFile.removeCallback();
   }
 
