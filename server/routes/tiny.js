@@ -67,6 +67,8 @@ export default function(app) {
       result.svg = url;
     }
 
+    result.errors = result.errors.map((e) => e.message || e);
+
     res.send(result);
   }
   return router;
