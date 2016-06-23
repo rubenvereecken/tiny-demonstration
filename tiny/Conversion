@@ -1,0 +1,7 @@
+int tiny() {
+    int i = 40;
+    char j = 2;
+    char k = i * j; // widen char to int first, then int -> char for assignment
+    writeln k;
+    return k - 80; // char -> int, exit 0
+}

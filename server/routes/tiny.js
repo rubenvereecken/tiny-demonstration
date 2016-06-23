@@ -42,8 +42,12 @@ export default function(app) {
       const tmpFile = tmp.fileSync();
       fs.writeFileSync(tmpFile.name, result.asm);
       let tmpBaseName = path.join(path.dirname(tmpFile.name), path.basename(tmpFile.name, '.tmp'))
-      result.asmOutput = child.execSync('nasm -w+all -f elf -g -F stabs ' + tmpFile.name).toString();
-      result.gccOutput = child.execSync(`gcc -m32 -Wl,-etiny -nostdlib ${tmpBaseName}.o -o ${tmpBaseName} -lc`).toString();
+      try {
+        result.asmOutput = child.execSync('nasm -w+all -f elf -g -F stabs ' + tmpFile.name).toString();
+        result.gccOutput = child.execSync(`gcc -m32 -Wl,-etiny -nostdlib ${tmpBaseName}.o -o ${tmpBaseName} -lc`).toString();
+      } catch (e) {
+        result.errors.push(e.message);
+      }
       try {
         result.tinyOutput = child.execSync(tmpBaseName, {input:req.body.input}).toString();
       } catch (e) {

@@ -7,7 +7,7 @@ import {TinyService} from 'tiny';
   directives: [],
   template: `
   <label>Program input</label>
-  <textarea class="form-control" rows="10" [(ngModel)]="current.input">
+  <textarea class="form-control" rows="5" [(ngModel)]="current.input">
   {{current.input}}
   </textarea>
   `

@@ -8,7 +8,7 @@ import {TinyService} from 'tiny';
   template: `
 <label>Program output</label>
 <pre *ngIf="current.result.errors && current.result.errors.length > 0"><div *ngFor="#error of current.result.errors">{{error}}</div></pre>
-<pre>{{current.result.tinyOutput}}</pre>
+<pre *ngIf="current.result.tinyOutput">{{current.result.tinyOutput}}</pre>
   `
 })
 

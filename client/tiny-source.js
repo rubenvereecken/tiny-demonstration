@@ -6,7 +6,7 @@ import {TinyService} from 'tiny';
   selector: 'tiny-source',
   directives: [],
   template: `
-  <textarea class="form-control" id="" name="" rows="20" [(ngModel)]="current.source">
+  <textarea class="form-control" id="" name="" rows="25" [(ngModel)]="current.source">
   {{current.source}}
   </textarea>
   `
