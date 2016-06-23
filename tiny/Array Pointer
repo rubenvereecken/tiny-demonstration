@@ -1,0 +1,12 @@
+int printarray(int[5] a, int b) {
+  writeln b;
+  writeln a[b];
+}
+
+int tiny() {
+  int[5] a;
+  int b = 1;
+  a[b] = 20;
+  printarray(a, b);
+}
+
