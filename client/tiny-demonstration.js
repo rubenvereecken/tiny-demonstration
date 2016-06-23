@@ -7,6 +7,7 @@ import {TinyTools} from 'tiny-tools';
 import {TinyOutput} from 'tiny-output';
 import {TinyInput} from 'tiny-input';
 import {TinyConfig} from 'tiny-config';
+import {TinySVG} from 'tiny-svg';
 
 // console.log (TinyPicker, TinySource, TinyAsm, TinyTools, TinyOutput);
 
@@ -14,7 +15,7 @@ import {TinyConfig} from 'tiny-config';
   providers: [TinyService],
   selector: 'tiny-demonstration',
   directives: [TinyPicker, TinySource, TinyAsm, TinyTools, TinyOutput, TinyInput,
-               TinyConfig],
+               TinyConfig, TinySVG],
   templateUrl: 'tiny-demonstration.html'
 })
 

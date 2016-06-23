@@ -15,6 +15,7 @@ export class TinyService {
       config: {
         globalLiveness: true,
         compressConstants: false,
+        generateSvg: false,
       },
     };
     this.sources = null;

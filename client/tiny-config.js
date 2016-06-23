@@ -17,6 +17,11 @@ import {TinyService} from 'tiny';
         <input type="checkbox" [(ngModel)]="config.compressConstants"> Constant Folding
       </label>
     </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="config.generateSvg"> Visualize AST
+      </label>
+    </div>
   </div>
   `
 })
