@@ -1,8 +1,0 @@
-int tiny() {
-  char a;
-  int b;
-  read a;
-  read b;
-  writeln a;
-  writeln b;
-}
